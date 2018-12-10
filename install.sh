@@ -909,7 +909,17 @@ install_v2ray() {
 	mkdir -p /tmp/v2ray
 
 	v2ray_tmp_file="/tmp/v2ray/v2ray.zip"
-	
+	v2ray_ver="v4.8.0"
+
+	if [[ ! $v2ray_ver ]]; then
+		echo
+		echo -e " $red获取 V2Ray 最新版本失败!!!$none"
+		echo
+		echo -e " 请尝试执行如下命令: $green echo 'nameserver 8.8.8.8' >/etc/resolv.conf $none"
+		echo
+		echo " 然后再继续安装脚本...."
+		echo
+		exit 1
 	fi
 
 	v2ray_download_link="https://github.com/v2ray/v2ray-core/releases/download/v4.8.0/v2ray-linux-64.zip"
